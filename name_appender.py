@@ -130,7 +130,7 @@ for i in range(len(ep_files)):
 
 	# Don't process file if it can't be casted to int
 	if RepresentsInt(ep_file_name) == False:
-		errors.append("Unable to identify episode name for " + ep_files[i])
+		errors.append("Unable to identify episode number for " + ep_files[i])
 		continue
 	
 	# Parse filename into INT
@@ -187,26 +187,3 @@ if len(errors) > 0:
 		file = open(episodes_dir + errorfile_name, file_write_mode)
 		file.write(str(errors))
 		file.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
