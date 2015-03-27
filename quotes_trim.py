@@ -7,7 +7,8 @@
 
 # EXPECTED USER INPUT 1:
 # Enter the path to the file to be trimmed of quotes
-source = "/Users/adithya/Desktop/30rs4"
+# (Enter the trailing slash too)
+source = ""
 
 ############################################
 # Constants
