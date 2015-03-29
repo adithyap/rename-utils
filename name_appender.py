@@ -69,7 +69,7 @@ file_extension_splitter = '.'
 #########################
 # Substitute for TryParse
 def RepresentsInt(s):
-    try: 
+    try:
         int(s)
         return True
     except ValueError:
@@ -80,7 +80,7 @@ def RepresentsInt(s):
 ############################################
 
 # Set Mode
-if debug_flag in sys.argv: 
+if debug_flag in sys.argv:
 	debugMode = 1
 else:
 	debugMode = 0
@@ -126,22 +126,25 @@ for i in range(len(ep_files)):
 		continue
 
 	# Handle prefixes
-	ep_file_name = (ep_file_name.lstrip(epname_prefix)).split(file_extension_splitter)[0]
+	if ep_file_name.startswith(epname_prefix):
+		ep_file_name = ep_file_name[len(epname_prefix):]
+
+	ep_file_name = ep_file_name.split(file_extension_splitter)[0]
 
 	# Don't process file if it can't be casted to int
 	if RepresentsInt(ep_file_name) == False:
 		errors.append("Unable to identify episode number for " + ep_files[i])
 		continue
-	
+
 	# Parse filename into INT
 	ep_index = int(ep_file_name)
 
 	# Use the computed episode index to search the episode name map
-	
+
 	if ep_index in epname_map:
 
 		# Corresponding episode name has been found, push it to rename list
-		
+
 		# Split filename into name and extension
 			# Rant:
 			# This is screwed if the file has no extension
