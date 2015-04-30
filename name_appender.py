@@ -18,11 +18,11 @@ import glob
 
 # EXPECTED USER INPUT 1:
 # Enter the path to the file containing the episode names
-# (Enter the trailing slash too)
 epname_source = ""
 
 # EXPECTED USER INPUT 2:
 # Enter the folder containing the episodes
+# (Enter the trailing slash too)
 episodes_dir = ""
 
 # OPTIONAL USER INPUT 3:
